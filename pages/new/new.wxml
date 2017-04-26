@@ -1,0 +1,38 @@
+<!--pages/new/new.wxml-->
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-cells__title">账号描述</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <input bindinput="accountDescpInput" placeholder="{{accountDescp}}" />
+      </view>
+    </view>
+    <view class="weui-cells__title">所用字符</view>
+    <view class="weui-cells weui-cells_after-title">
+      <checkbox-group bindchange="checkboxChange">
+        <label class="weui-cell weui-check__label" wx:for="{{passwordStrength}}" wx:key="{{item.value}}">
+          <checkbox value="{{item.name}}" checked="{{item.checked}}">{{item.value}}</checkbox>
+        </label>
+      </checkbox-group>
+    </view>
+    <view class="weui-cells__title">密码长度</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <input bindinput="passwordLengthInput" placeholder="{{passwordLength}}位" type="number" />
+      </view>
+    </view>
+    <view class="weui-cells__title">生成结果</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <input bindinput="passwordResultInput" value="{{passwordResult}}"/>
+        </view>
+        <view class="weui-cell__ft">
+          <view bindtap="copyToClipboard" class="weui-vcode-btn">复制</view>
+        </view>
+      </view>
+    </view>
+    <button class="weui-btn" type="primary" bindtap="generatePassword">生成密码</button>
+    <button class="weui-btn" type="primary" bindtap="submit">提    交</button>
+  </view>
+</view>
