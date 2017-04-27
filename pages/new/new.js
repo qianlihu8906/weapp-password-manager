@@ -144,7 +144,7 @@ Page({
 
     wx.showModal({
       title: "提交",
-      content: "请确定此账号密码已在对应网站，APP上成功设置",
+      content: "请确定此账号密码已在对应网站，应用软件上成功设置",
       success: function (res) {
         if (res.confirm) {
           wx.setStorage({
